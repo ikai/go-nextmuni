@@ -1,6 +1,7 @@
 package main
 import (
   "testing"
+  "strings"
 )
 
 const routeXml = `<?xml version="1.0" encoding="utf-8" ?> 
@@ -10,7 +11,8 @@ const routeXml = `<?xml version="1.0" encoding="utf-8" ?>
 </body>`
 
 func TestParseRouteListXml(t *testing.T) {
-  r := ParseRouteList(routeXml)
+  reader := strings.NewReader(routeXml)
+  r := ParseRouteList(reader)
 
   if len(r.Routes) != 2 {
     t.Errorf("RouteList should have 2 elements. Seen: %v", len(r.Routes))
