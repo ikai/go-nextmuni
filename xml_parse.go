@@ -6,10 +6,6 @@ import (
   "xml"
 )
 
-func getHello(name string) string {
-  return fmt.Sprintf("Hello, %v", name)
-}
-
 type Route struct {
   Tag   string "attr"
   Title string "attr"

@@ -9,13 +9,6 @@ const routeXml = `<?xml version="1.0" encoding="utf-8" ?>
 <route tag="J" title="J-Church"/> 
 </body>`
 
-func TestGetHello(t *testing.T) {
-  s := getHello("Ikai")
-  if s != "Hello, Ikai" {
-    t.Errorf("Input string does not match output string")
-  }
-}
-
 func TestParseRouteListXml(t *testing.T) {
   r := ParseRouteList(routeXml)
 
